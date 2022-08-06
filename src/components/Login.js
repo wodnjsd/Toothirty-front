@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
 
@@ -15,9 +17,19 @@ export default function Login() {
     })
   }
 
+  const navigate = useNavigate()
+
   async function handleSubmit(e) {
     e.preventDefault()
-    console.log('Add your submit code in here')
+    
+    try {
+      const { data } = await axios.post('/api/login', formData)
+      localStorage.setItem('token', data.token)
+      navigate('/all')
+    
+    } catch (err) {
+      console.log(err.response.data)
+    }
   }
 
   return <div className="section">

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -15,18 +16,20 @@ function Index() {
   }, [])
 
   return <section className="section">
+    <div>
+      <h2 className="title is-2">What's hurting?</h2>
+    </div>
     <div className="container">
-      <div className="columns is-multiline is-mobile">
+
+      <div className="column is-full is-mobile">
         {types.map((type, index) => {
-          return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
-            <Link to={`/type/${type.id}`}>
+          return <div key={index} className="column is-two-thirds">
+            <Link to={`/types/${type.id}`}>
               <div className="card">
                 <div className="card-content">
                   <div className="media">
                     <div className="media-content">
-                      <p className="title is-4">{type.name}</p>
-                      {/* <p className="subtitle is-6">{'Weight: ' + poke.weightKg + 'kg'}</p>
-                      <p className="subtitle is-6">{'Trainer: ' + poke.user.username}</p> */}
+                      <p className="title is-4">{type.name[0].toUpperCase() + type.name.slice(1)}</p>
                     </div>
                   </div>
                 </div>
