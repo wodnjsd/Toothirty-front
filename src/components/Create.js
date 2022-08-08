@@ -17,6 +17,12 @@ function CreateProblem() {
     user_id: 1,
   })
 
+  // const [advices, setAdvices] = useState({
+  //   content: '',
+  //   id: 1,
+
+  // })
+
   function handleChange(event) {
     setFormData({
       ...formData,
@@ -28,10 +34,18 @@ function CreateProblem() {
     event.preventDefault()
     const token = localStorage.getItem('token')
 
+    // const getAdvice(() => {
+    //   formData.advice.forEach((advice) => {
+    //     return advice
+    //   })
+    // })
+
+
     const newAdvice = {
-    
-      advice: formData.advice.map(advice => advice.value),
+      content: formData.advice.map(advice => advice.value),
+      id: 1,
     }
+
     console.log(newAdvice)
 
     try {
