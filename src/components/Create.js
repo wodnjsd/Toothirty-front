@@ -17,12 +17,6 @@ function CreateProblem() {
     user_id: 1,
   })
 
-  // const [advices, setAdvices] = useState({
-  //   content: '',
-  //   id: 1,
-
-  // })
-
   function handleChange(event) {
     setFormData({
       ...formData,
@@ -34,26 +28,23 @@ function CreateProblem() {
     event.preventDefault()
     const token = localStorage.getItem('token')
 
-    // const getAdvice(() => {
-    //   formData.advice.forEach((advice) => {
-    //     return advice
-    //   })
-    // })
 
+    console.log(formData.advice)
 
-    const newAdvice = {
-      content: formData.advice.map(advice => advice.value),
-      id: 1,
-    }
+    formData.advice.forEach((advice) => {
+      advice['content'] = advice['value'];
+      delete advice['value'];
+      delete advice['label']
+    })
 
-    console.log(newAdvice)
 
     try {
-      const { data } = await axios.post(`/api/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: newAdvice }, {
+      const { data } = await axios.post(`/api/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: formData.advice }, {
         headers: { Authorization: `Bearer ${token}` },
       })
       console.log(data)
       navigate(`/all`)
+
     } catch (err) {
       console.log(err.response.data)
     }

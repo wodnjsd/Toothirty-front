@@ -1,7 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+
 
 const NavBar = () => {
+
+  const [loggedIn, setLoggedIn] = React.useState(false)
+  const navigate = useLocation()
+
+  function getToken() {
+    if (!localStorage.getItem('token')) return false
+  
+  }
+
+  React.useEffect(() => {
+    setLoggedIn(getToken())
+  }, [navigate])
+
+  async function logOut() {
+    localStorage.clear()
+  }
+
   return <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
     <div className="navbar-menu is-active">
       <div className="navbar-start">
@@ -19,16 +37,21 @@ const NavBar = () => {
         <Link to='/survey' className="button is-ghost">
           Survey
         </Link>
-        <Link to="/login" className="button is-ghost">
+        {!loggedIn && <Link to="/login" className="button is-ghost">
           Login
-        </Link>
+        </Link>}
+        {loggedIn && <Link to="/" className="button is-ghost"
+          onClick={logOut}>
+          Logout
+        </Link>}
+
+        {(localStorage.getItem('token')) && 
         <Link to='/create' className="button is-ghost">
           Create
-        </Link>
+        </Link>}
       </div>
 
     </div>
-
 
   </nav>
 }

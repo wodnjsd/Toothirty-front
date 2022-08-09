@@ -50,29 +50,14 @@ function Questionnaire() {
         score: [0, 1, 2],
       }
     ],
-    completedHTML: "Hello",
-
+    // completedHtml: `<h4> our risk of getting tooth decay is: ${sum} </h4>`,
   }
 
   const survey = new Model(surveyJson)
   survey.focusFirstQuestionAutomatic = false
 
-
-  // survey.onComplete.add(function () {
-  //   surveyJson.elements.forEach((question) => {
-  //     const scores = []
-  //     const position = question.choices.indexOf()
-  //     scores.push(question.score[position])
-  //     let sum = 0
-  //     for (let i = 0; i < scores.length; i++) {
-  //       sum += scores[i];
-  //     }
-  //     // return sum
-  //     console.log(sum)
-  //   })
-
-  // })
-
+  let sum = 0
+  let risk = ''
 
   survey.onComplete.add(function (sender) {
     const scores = []
@@ -87,26 +72,29 @@ function Questionnaire() {
     scores.push(surveyJson.elements[3].score[position4])
     scores.push(surveyJson.elements[4].score[position5])
     console.log(scores)
-    let sum = 0
+
     for (let i = 0; i < scores.length; i++) {
       sum += scores[i];
     }
     console.log(sum)
-
-
+    if (sum > 10) {
+      risk = "high"
+    } else if (sum < 4) {
+      risk = "low"
+    } else
+      risk = "medium"
   })
-
-
 
 
   return (
     <section>
       <div className="container">
         <br />
-        <h1 className="title is-1 has-text-centered has-text-success-dark">How likely are you to get tooth decay?</h1>
-        <p className="subtitle is-3 has-text-centered has-text-success-dark">Find out your risk of getting decay</p>
-        <div>{<Survey model={survey} />}</div>
-
+        <h3 className="title is-3 has-text-centered has-text-success-dark">How likely are you to get tooth decay?</h3>
+        <p className="subtitle is-5 has-text-centered has-text-success-dark">Complete the quiz below and find out!</p>
+        <div>{<Survey model={survey} />}
+          <p className="subtitle is-5 has-text-centered has-text-success-dark">You are at a {risk} risk!</p>
+        </div>
       </div>
 
     </section>
