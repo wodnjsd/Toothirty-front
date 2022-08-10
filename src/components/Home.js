@@ -1,17 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 function Home() {
   return (
-    <section className="hero is-fullheight-with-navbar is-warning">
-      <div className="hero-body">
-        <div className="container">
+    <section className="homepage">
+      <section className="hero is-fullheight">
+        <div className="hero-body">
+
+          {/* <div className="head-image">
+            <img src = {require('../img/Toothbrush.jpg')} alt="2:30" />
+          </div> */}
           {/* <p className="title is-1 has-text-centered has-text-black">
             2:30
           </p> */}
-          <p className="homepage">
+          <div className="home-writing">
             Roses are red, violets are blue, it's time for your dental cleaining, and maybe a checkup too
-          </p>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
   )
 }

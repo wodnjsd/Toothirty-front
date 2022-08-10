@@ -16,10 +16,11 @@ function Index() {
   }, [])
 
   return <section className="section">
-    <div>
-      <h2 className="title is-2">What's hurting?</h2>
-    </div>
+
     <div className="container">
+      <div>
+        <h2 className="title is-2">What's hurting?</h2>
+      </div>
 
       <div className="column is-full is-mobile">
         {types.map((type, index) => {

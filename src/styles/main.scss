@@ -1,13 +1,24 @@
+@import "~bulma/bulma.sass";
+
 * {
   font-family: "Prata";
 
 }
 
 .homepage {
-  display: block;
-  text-align: start;
+  background-color: #D4E0E6;
+}
+// .head-image {
+//   width: 50%
+// }
+
+.navbar {
+  width: 100%
+}
+
+.home-writing{
   width: 50%;
-  font-size:x-large
+  font-size:xx-large;
 }
 
 .logo {
@@ -15,6 +26,11 @@
   font-family: "Roboto Mono"
 }
 
+.card:hover {
+  background-color: #D4E0E6;
+}
+
 // .section {
 //   background-color:#CBDBEA;
 // }
+
