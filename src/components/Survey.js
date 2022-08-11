@@ -8,6 +8,9 @@ import { Survey } from "survey-react-ui";
 StylesManager.applyTheme("modern");
 
 function Questionnaire() {
+
+  // const [completed, setCompleted] = React.useState(false)
+
   const surveyJson = {
     elements: [
       {
@@ -50,16 +53,20 @@ function Questionnaire() {
         score: [0, 1, 2],
       }
     ],
-    // completedHtml: `<h4> our risk of getting tooth decay is: ${sum} </h4>`,
+    completedHtml: `Find out your results below!`,
   }
 
   const survey = new Model(surveyJson)
   survey.focusFirstQuestionAutomatic = false
+  survey.completeText = "Show my results"
+  survey.showCompletedPage = false
 
   let sum = 0
   let risk = ''
 
   survey.onComplete.add(function (sender) {
+
+
     const scores = []
     const position1 = surveyJson.elements[0].choices.indexOf(sender.data.First)
     const position2 = surveyJson.elements[1].choices.indexOf(sender.data.Second)
@@ -81,9 +88,17 @@ function Questionnaire() {
       risk = "high"
     } else if (sum < 4) {
       risk = "low"
-    } else
+    } else {
       risk = "medium"
+    }
+    console.log(risk)
+    // setCompleted(true)
+
+    document.querySelector('#result').textContent = `You are at a ${risk} risk`
+
   })
+
+
 
 
   return (
@@ -93,7 +108,8 @@ function Questionnaire() {
         <h3 className="title is-3 has-text-centered has-text-success-dark">How likely are you to get tooth decay?</h3>
         <p className="subtitle is-5 has-text-centered has-text-success-dark">Complete the quiz below and find out!</p>
         <div>{<Survey model={survey} />}
-          <p className="subtitle is-5 has-text-centered has-text-success-dark">You are at a {risk} risk!</p>
+          <p id="result"></p>
+          
         </div>
       </div>
 
@@ -102,10 +118,6 @@ function Questionnaire() {
   )
 }
 
-export default Questionnaire
 
-// window.survey = new Survey.Model(json);
-// survey.onComplete.add(function (sender) {
-//   document.querySelector('#surveyResult').textContent = "Result JSON:\n" + JSON.stringify(sender.data, null, 3);
-// });
-// ReactDOM.render(<SurveyReact.Survey model={survey} />, document.getElementById("surveyElement"));
+
+export default Questionnaire

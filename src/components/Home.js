@@ -1,21 +1,28 @@
 /* eslint-disable react/no-unescaped-entities */
+
+// import { ReactComponent as Logo } from '../img/Logo.svg'
+import Footer from './Footer'
+
 function Home() {
   return (
     <section className="homepage">
-      <section className="hero is-fullheight">
-        <div className="hero-body">
+      <div className="body">
+        <div className="body-writing">
 
-          {/* <div className="head-image">
-            <img src = {require('../img/Toothbrush.jpg')} alt="2:30" />
-          </div> */}
-          {/* <p className="title is-1 has-text-centered has-text-black">
-            2:30
-          </p> */}
+          <div className="home-title">
+            More than just a dentist
+          </div>
+
           <div className="home-writing">
-            Roses are red, violets are blue, it's time for your dental cleaining, and maybe a checkup too
+            Roses are red, violets are blue, it's time for your dental cleaning, and maybe a checkup too
           </div>
         </div>
-      </section>
+        <img src={require('../img/home.png')} className="home-image" />
+      </div>
+      <div>
+        <Footer />
+      </div>
+    
     </section>
   )
 }

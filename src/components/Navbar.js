@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
+import { ReactComponent as Logo } from '../img/Logo.svg'
 
 const NavBar = () => {
 
@@ -21,39 +21,50 @@ const NavBar = () => {
     localStorage.clear()
   }
 
-  return <nav className="navbar" role="navigation" aria-label="main navigation">
-    <div className="navbar-menu is-active">
-      <div className="navbar-start">
-        <div className="navbar-item">
-          <Link to="/" className="logo">
-            2:30
-          </Link>
-        </div>
-      </div>
+  return <section className="navs">
+    <div className="nav-item">
+      <Link to="/" className="logo">
+        <Logo />
 
-      <div className="navbar-end">
-        <Link to="/all" className="button is-ghost">
-          Categories
-        </Link>
-        <Link to='/survey' className="button is-ghost">
-          Survey
-        </Link>
-        {!loggedIn && <Link to="/login" className="button is-ghost">
+      </Link>
+    </div>
+    <div className="nav-main">
+      <Link to='/' className="nav-item">
+        About Us
+      </Link>
+      <Link to='/all' className="nav-item">
+        Categories
+      </Link>
+      <Link to="/" className="nav-item">
+        News
+      </Link>
+      <Link to='/survey' className="nav-item">
+        Survey
+      </Link>
+    </div>
+    <div className="nav-end">
+      <button>
+        {!loggedIn && <Link to="/login" className="nav-item">
           Login
         </Link>}
-        {loggedIn && <Link to="/" className="button is-ghost"
+      </button>
+
+      {loggedIn && <button>
+        <Link to="/" className="nav-item"
           onClick={logOut}>
           Logout
-        </Link>}
-        {(localStorage.getItem('token')) &&
-          <Link to='/create' className="button is-ghost">
+        </Link>
+      </button>}
+
+      {(localStorage.getItem('token')) &&
+        <button>
+          <Link to='/create' className="nav-item">
             Create
-          </Link>}
-      </div>
+          </Link>
+        </button>}
 
     </div>
-
-  </nav>
+  </section>
 
 }
 

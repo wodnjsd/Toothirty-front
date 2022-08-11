@@ -24,42 +24,44 @@ function ShowAdvice() {
     <section className="section">
       <div className="container">
         <h3 className="title is-3">
-        It looks like you might have: {diagnosis}
+          It looks like you might have: {diagnosis}
         </h3>
         <br />
-        <h4 className="subtitle">
-        Advice:
+        <h4 className="subtitle is-4">
+          Advice:
         </h4>
-        <div className="columns is-multiline is-mobile">
-          {advice.map((advice, index) => {
-            return <div key={index} className="column is-two-thirds">
-              <div className="card">
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-content">
-                      <p className="title is-4">{advice.content}</p>
-                      {/* <p className="subtitle is-6">{'Weight: ' + poke.weightKg + 'kg'}</p>
+
+        {advice.map((advice, index) => {
+          return <div key={index} className="column is-two-thirds">
+            <div className="card">
+              <div className="card-content">
+                <div className="media">
+                  <div className="media-content">
+                    <p className="title is-4">{advice.content}</p>
+                    {/* <p className="subtitle is-6">{'Weight: ' + poke.weightKg + 'kg'}</p>
                     <p className="subtitle is-6">{'Trainer: ' + poke.user.username}</p> */}
-                    </div>
                   </div>
                 </div>
-                {/* <div className="card-image">
+              </div>
+              {/* <div className="card-image">
                 <figure className="image is-4by3">
                   <img src={poke.image} alt={poke.name} />
                 </figure>
               </div> */}
-              </div>
             </div>
-          })}
-        </div>
-        < br/>
+          </div>
+        })}
+        < br />
         <p>Make sure you contact your dentist as soon as possible and get it checked!</p>
         <br />
-        <Link to={'/all'}>
-          To all categories ⏎
+        <Link to={'/all'} className="level-right">
+        To all categories ⏎
         </Link>
-
       </div>
+      
+
+
+
 
 
     </section>
