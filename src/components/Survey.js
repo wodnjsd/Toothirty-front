@@ -2,14 +2,12 @@ import React from 'react'
 import 'survey-core/modern.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from "survey-react-ui";
-
+import Footer from './Footer'
 
 
 StylesManager.applyTheme("modern");
 
 function Questionnaire() {
-
-  // const [completed, setCompleted] = React.useState(false)
 
   const surveyJson = {
     elements: [
@@ -63,6 +61,7 @@ function Questionnaire() {
 
   let sum = 0
   let risk = ''
+  let comment = ''
 
   survey.onComplete.add(function (sender) {
 
@@ -85,36 +84,41 @@ function Questionnaire() {
     }
     console.log(sum)
     if (sum > 10) {
-      risk = "high"
+      risk = "high";
+      comment = "Better get brushing!"
     } else if (sum < 4) {
-      risk = "low"
+      risk = "low";
+      comment = "Keep it up!"
     } else {
       risk = "medium"
+      comment = "Not too bad"
     }
     console.log(risk)
-    // setCompleted(true)
 
-    document.querySelector('#result').textContent = `You are at a ${risk} risk`
+    document.querySelector('#result').textContent = `You are at a ${risk} risk. ${comment}`
+    document.querySelector('#result').appendChild(document.createElement('hr'))
+    const image = document.createElement('img')
+    image.src = 'https://res.cloudinary.com/djuip85dc/image/upload/c_scale,w_463/v1660129187/Toothbags_gur2ec.png'
+    document.querySelector('#result').appendChild(image)
 
   })
 
 
-
-
   return (
-    <section>
-      <div className="container">
-        <br />
-        <h3 className="title is-3 has-text-centered has-text-success-dark">How likely are you to get tooth decay?</h3>
-        <p className="subtitle is-5 has-text-centered has-text-success-dark">Complete the quiz below and find out!</p>
-        <div>{<Survey model={survey} />}
-          <p id="result"></p>
+    <section className="index-page">
+      <div className="header">
+        <h3 className="header-title">How likely are you to get tooth decay?</h3>
+        <p className="survey-subtitle">Complete the quiz below and find out!</p>
+      </div>
+      <div>{<Survey model={survey} />}
+        <div id="result"> 
+          <div></div>
           
         </div>
       </div>
 
+      <Footer />
     </section>
-
   )
 }
 

@@ -43,14 +43,14 @@ const NavBar = () => {
       </Link>
     </div>
     <div className="nav-end">
-      <button>
-        {!loggedIn && <Link to="/login" className="nav-item">
+      <button className="login">
+        {!loggedIn && <Link to="/login">
           Login
         </Link>}
       </button>
 
-      {loggedIn && <button>
-        <Link to="/" className="nav-item"
+      {loggedIn && <button className='login'>
+        <Link to="/"
           onClick={logOut}>
           Logout
         </Link>

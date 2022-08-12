@@ -23,7 +23,7 @@ function Index() {
 
   return <section className="index-page">
     <div className="header">
-      <p className="subtitle">What's hurting?</p>
+      <p className="header-title">What's hurting?</p>
     </div>
     <div className="index-box">
 

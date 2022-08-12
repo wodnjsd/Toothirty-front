@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useParams } from "react-router-dom"
+import Footer from "./Footer"
 // import axios from 'axios'
 
 function Problems() {
@@ -18,37 +19,24 @@ function Problems() {
 
 
   return (
-    <section className="section">
-      <div className="container">
-        <h3 className = "title is-3">What are your signs/symptoms?</h3>
-        <div className="column is-full is-mobile">
-          {problems.map((problem, index) => {
-            return <div key={index} className="column is-two-thirds">
-              <Link to={`/problems/${problem.id}`}>
-                <div className="card">
-                  <div className="card-content">
-                    <div className="media">
-                      <div className="media-content">
-                        <p className="title is-4">{problem.name}</p>
-                        {/* <p className="subtitle is-6">{'Weight: ' + poke.weightKg + 'kg'}</p>
-                      <p className="subtitle is-6">{'Trainer: ' + poke.user.username}</p> */}
-                      </div>
-                    </div>
-                  </div>
-                  {/* <div className="card-image">
-                  <figure className="image is-4by3">
-                    <img src={poke.image} alt={poke.name} />
-                  </figure>
-                </div> */}
-                </div>
-              </Link>
-            </div>
-          })}
-        </div>
-
+    <section className="index-page">
+      <div className="header">
+        <p className="header-title">What are your signs and symptoms?</p>
       </div>
-
-
+      <div className="index-box">
+        {problems.map((problem, index) => {
+          return <div key={index}>
+            <Link to={`/problems/${problem.id}`}>
+              <div className="index">
+                <div className="index-name">
+                  <p >{problem.name}</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        })}
+      </div>
+      <Footer />
     </section>
 
   )
