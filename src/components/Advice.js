@@ -43,10 +43,10 @@ function ShowAdvice() {
         </div>
       })}
       < br />
-      <p>Make sure you contact your dentist as soon as possible and get it checked!</p>
-      <br />
+      <p className="advice">Make sure you contact your dentist as soon as possible and get it checked!</p>
+      <hr />
       <Link to={'/all'} className="level-right">
-        To all categories ⏎
+        Start again ⏎
       </Link>
       <br />
 

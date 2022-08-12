@@ -33,8 +33,8 @@ function Index() {
             <div className="index">
               <div>
                 <p className="index-name">{type.name[0].toUpperCase() + type.name.slice(1)}</p>
-              </div>
-              <div>
+              </div>    
+              <div>      
                 <figure className="index-image">
                   <img src={type.image} alt={type.name} />
                 </figure>

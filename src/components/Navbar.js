@@ -43,26 +43,26 @@ const NavBar = () => {
       </Link>
     </div>
     <div className="nav-end">
-      <button className="login">
+      <div className="login">
         {!loggedIn && <Link to="/login">
           Login
         </Link>}
-      </button>
 
-      {loggedIn && <button className='login'>
-        <Link to="/"
-          onClick={logOut}>
-          Logout
-        </Link>
-      </button>}
-
-      {(localStorage.getItem('token')) &&
-        <button>
-          <Link to='/create' className="nav-item">
-            Create
-          </Link>
-        </button>}
-
+        {loggedIn &&
+          <Link to="/"
+            onClick={logOut}>
+            Logout
+          </Link>}
+      </div>
+      <div>
+        {(localStorage.getItem('token')) &&
+          <div className="login">
+            <Link to='/create'>
+              Create
+            </Link>
+          </div>
+        }
+      </div>
     </div>
   </section>
 

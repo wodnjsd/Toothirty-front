@@ -51,12 +51,12 @@ function CreateProblem() {
   }
 
   return (
-    <section className="section">
-      <h3 className="title is-3">
-        Create new problem
-      </h3>
-      <div className="container">
-        <form onSubmit={handleSubmit}>
+    <section className="index-page">
+      <div className="header">
+        <p className="header-title">Create new problem</p>
+      </div>
+      <div className="index-box">
+        <form onSubmit={handleSubmit} className="form">
           {/* // ! Me Being Extremely Fancy 🤪: */}
           {['name', 'diagnosis'].map(field => {
             return <div key={field} className="field">
@@ -86,7 +86,7 @@ function CreateProblem() {
             onChange={(types) => setFormData({ ...formData, types })}
             value={formData.types}
           />
-          <label className="label">
+          <label className="label mt-4">
             {'Advice'}
           </label>
           <Select
@@ -99,7 +99,7 @@ function CreateProblem() {
             onChange={(advice) => setFormData({ ...formData, advice })}
             value={formData.advice}
           />
-          <button className="button mt-5 is-success">Submit</button>
+          <button className="button mt-6">Submit</button>
         </form>
       </div>
     </section>

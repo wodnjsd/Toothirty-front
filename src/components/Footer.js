@@ -6,6 +6,7 @@ function Footer() {
       <div>
         <Logo />
       </div>
+      <hr />
       <div className="credits">
         <div>
           Careers
@@ -18,7 +19,8 @@ function Footer() {
         </div>
 
       </div>
-      <hr />
+      <br />
+
       <div className="credits2">
         
         2022 2:30 Ltd. All rights reserved

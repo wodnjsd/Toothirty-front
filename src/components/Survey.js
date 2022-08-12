@@ -96,10 +96,10 @@ function Questionnaire() {
     console.log(risk)
 
     document.querySelector('#result').textContent = `You are at a ${risk} risk. ${comment}`
-    document.querySelector('#result').appendChild(document.createElement('hr'))
+    document.querySelector('#result').appendChild(document.createElement('br'))
     const image = document.createElement('img')
     image.src = 'https://res.cloudinary.com/djuip85dc/image/upload/c_scale,w_463/v1660129187/Toothbags_gur2ec.png'
-    document.querySelector('#result').appendChild(image)
+    document.querySelector('.survey-box').appendChild(image)
 
   })
 
@@ -110,7 +110,8 @@ function Questionnaire() {
         <h3 className="header-title">How likely are you to get tooth decay?</h3>
         <p className="survey-subtitle">Complete the quiz below and find out!</p>
       </div>
-      <div>{<Survey model={survey} />}
+      <br />
+      <div className="survey-box">{<Survey model={survey} />}
         <div id="result"> 
           <div></div>
           
