@@ -1,18 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import { ReactComponent as Tooth } from '../img/Tooth.svg'
-// import { ReactComponent as Jaw } from '../img/jaw.svg'
-// import { ReactComponent as Gum } from '../img/orthodontic.svg'
-// import { ReactComponent as Other } from '../img/toothbrush.svg'
 import Footer from './Footer'
+import { baseUrl } from '../config'
 
 function Index() {
   const [types, setTypes] = React.useState([])
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch('/api/all')
+      const res = await fetch(`/${baseUrl}/all`)
       const json = await res.json()
       setTypes(json)
       console.log("Fetch your data in here")

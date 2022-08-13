@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 import types from '../data/types'
 import advice from "../data/advice"
+import { baseUrl } from '../config'
 
 function CreateProblem() {
 
@@ -39,7 +40,7 @@ function CreateProblem() {
 
 
     try {
-      const { data } = await axios.post(`/api/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: formData.advice }, {
+      const { data } = await axios.post(`/${baseUrl}/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: formData.advice }, {
         headers: { Authorization: `Bearer ${token}` },
       })
       console.log(data)

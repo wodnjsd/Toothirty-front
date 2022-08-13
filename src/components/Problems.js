@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useParams } from "react-router-dom"
 import Footer from "./Footer"
-// import axios from 'axios'
+import { baseUrl } from '../config'
 
 function Problems() {
   const [problems, setProblems] = React.useState([])
@@ -10,7 +10,7 @@ function Problems() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`/api/types/${typeId}`)
+      const res = await fetch(`/${baseUrl}/types/${typeId}`)
       const json = await res.json()
       setProblems(json.problems)
     }
