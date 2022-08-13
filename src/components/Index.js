@@ -16,7 +16,7 @@ function Index() {
     }
     getData()
     console.log(types)
-  }, [])
+  }, [types])
 
   return <section className="index-page">
     <div className="header">
