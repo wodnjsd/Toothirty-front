@@ -9,7 +9,7 @@ function Index() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`/${baseUrl}/all`)
+      const res = await fetch(`${baseUrl}/all`)
       const json = await res.json()
       setTypes(json)
       console.log("Fetch your data in here")

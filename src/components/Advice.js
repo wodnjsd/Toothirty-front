@@ -11,7 +11,7 @@ function ShowAdvice() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`/${baseUrl}/problems/${problemId}`)
+      const res = await fetch(`${baseUrl}/problems/${problemId}`)
       const json = await res.json()
       setAdvice(json.advice)
       setDiagnosis(json.diagnosis)

@@ -40,7 +40,7 @@ function CreateProblem() {
 
 
     try {
-      const { data } = await axios.post(`/${baseUrl}/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: formData.advice }, {
+      const { data } = await axios.post(`${baseUrl}/problems/${formData.types.value}`, { name: formData.name, diagnosis: formData.diagnosis, advice: formData.advice }, {
         headers: { Authorization: `Bearer ${token}` },
       })
       console.log(data)

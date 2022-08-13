@@ -10,7 +10,7 @@ function Problems() {
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`/${baseUrl}/types/${typeId}`)
+      const res = await fetch(`${baseUrl}/types/${typeId}`)
       const json = await res.json()
       setProblems(json.problems)
     }
