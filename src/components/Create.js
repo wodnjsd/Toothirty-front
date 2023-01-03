@@ -58,7 +58,6 @@ function CreateProblem() {
       </div>
       <div className="index-box">
         <form onSubmit={handleSubmit} className="form">
-          {/* // ! Me Being Extremely Fancy 🤪: */}
           {['name', 'diagnosis'].map(field => {
             return <div key={field} className="field">
               <label className="label">

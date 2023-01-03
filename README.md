@@ -1,30 +1,68 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Adding A Frontend
+# GA Project-4 Toothirty
 
-## Guidelines
+## Overview 
+A Python Flask API and React app
 
-### Part 1, Getting it all set up
+The app has been deployed with Heroku and is availbe HERE
 
-This React project is the starter code for a frontend for the API you've been building. It depends on your API to be running.
+My final project for the Software Engineering Immersive course is a full-stack application built with Flask and React.
 
-It works via creating a proxy server to connect with your API. It expects all backend endpoints to be prefixed with the `/api` prefix. That's how React-Dev-Server can tell the difference between React routes on the frontend, and your API endpoints. Luckily, we've already set this up, so no backend changes should be needed.
+Since the pandemic it has become increasingly more difficult to get especially NHS dental appointments, with minimum weeks of waiting in average.
+Toothirty is a digital health app to provide people with advice for dental pain whilst waiting for a dental appointment.
 
-Try running both projects at the same time and see if you can get your frontend talking to your backend! You will need to add `Route` components yourself to `App.js`, but some starter files have been added for you, to save you time. Make any changes to these files as you need. 
-
-`npm start` or `npm run start` to run your frontend.
-
-
-### Part 2, Setting up TypeScript for your project.
-
-We're going to refactor this codebase to be a TS codebase!
-
-To do this, follow the instructions in **TYPESCRIPT.md** before moving on.
-
-
-### Part 3, Adding more components
-
-Once you've got your Frontend talking to your Backend, time to add some features to your frontend to make it a nicer experience!
-
-1. Add a `Navbar` so that you can navigate, and hook up both the `/` and `/pokemon` (equivalent) routes so that you can move between a home page and an index page. Your index page should show a list of nice cards.
-2. Create a `ShowPokemon` (equivalent) component, so that when you click on a card it takes you to the ShowPokemon page that just shows a single pokemon. 
+## Technologies used:
+* Python
+* Flask
+* PostgreSQL
+* React
+* JavaScript
+* Axios
+* Survey-js
+* CSS
+* Figma
 
 
+## Brief:
+* Build a full-stack application** by making your own backend and your own front-end
+* Use a Python Flask API using a Flask REST Framework to serve your data from a Postgres database
+* Consume your API with a separate front-end built with React
+* Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
+* Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut
+* Have a visually impressive design
+* Be deployed online so it's publicly accessible
+
+
+### Functionality
+Users can:
+- View the list of advice for their spefic symptoms
+- Take the survey to see their risk of developing tooth decay
+
+Admin can: 
+- Login and create a new problem within the existing types and link it to existing advice via front-end
+
+## Approach:
+* First I started by sketching out an Entity Relationship Diagram
+* When I was happy with this I moved on to building my models, views and serializers on the back-end in a Flask framework to create a SQL databse 
+* I used TablePlus to visualise my PostgreSQL database and Insomnia to test my backend requests.
+* Once I was happy with my back-end I moved on to the front-end, woking on the main components 
+* Once I had reached my MVP I worked on the Survey as a stretch goal using a Survey js library
+* Styling- I took inspiration from the Babylon website which is a well known digital healthcare app and used CSS to create my desired design 
+
+
+
+## Challenges/ known bugs:
+* The free version of Heroku I used to deploy was deleted soon after so had to redeploy
+* Bug with useEffecct on the main Problems page causing re-rendering
+* Survey page needs refreshing to start again 
+
+## Future improvements:
+* Sort out dependency array of useEffect on problems page 
+* Complete other pages on the navbar and footer such as "About Us" and "FAQ" and on the footer 
+* Expand the database to include more problems and advice for users 
+* Create a start again button after completing survey 
+* Responsive design for mobile 
+
+## Lessons learned:
+* Saw benefits of collaborative work, sharing ideas and fresh eyes for debugging 
+* Confidence boost building full-stack app on my own
+* 
