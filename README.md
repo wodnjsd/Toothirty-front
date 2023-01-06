@@ -21,9 +21,8 @@ Toothirty is a digital health app to provide people with advice for dental pain 
 * CSS
 * Figma
 
-
 ## Brief:
-* Build a full-stack application** by making your own backend and your own front-end
+* Build a full-stack application by making your own backend and your own front-end
 * Use a Python Flask API using a Flask REST Framework to serve your data from a Postgres database
 * Consume your API with a separate front-end built with React
 * Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
@@ -34,7 +33,7 @@ Toothirty is a digital health app to provide people with advice for dental pain 
 
 ## Functionality:
 Users can:  
-- **View the list of advice for their spefic symptoms**
+- View the list of advice for their spefic symptoms
 - Take the survey to see their risk of developing tooth decay 
 
 Admin can: 
@@ -42,25 +41,21 @@ Admin can:
 
 ## Demonstration of App Flow:
 **Homepage**
-
 ![Homepage](/src/img/homepage.png)
 
 **Categories**
-
 ![What's hurting](/src/img/types.png)
 
 **Symptoms**
+![Symptoms](/src/img/symptoms.png)
 
-**Advice page**
-
+**Advice**
 ![Advice](/src/img/advice.png)
 
-**Survey page**
-
+**Survey**
 ![Survey page](/src/img/survey.png)
 
-**Survey result page**
-
+**Survey result**
 ![Survey result](/src/img/survey-result.png)
 
 **Creating new problem and advice**
@@ -70,25 +65,24 @@ Admin can:
 * First I started planning the database architecture by sketching out an Entity Relationship Diagram
 * When I was happy with this I moved on to building my models, views and serializers on the back-end in a Flask framework to create a SQL databse 
 * I used TablePlus to visualise my PostgreSQL database and Insomnia to test my backend requests.
-* Once I was happy with my back-end I moved on to the front-end, woking on the main components 
-* Once I had reached my MVP I worked on the Survey as a stretch goal using a Survey js library
-* Styling- I took inspiration from the Babylon website which is a well known digital healthcare app and used CSS to create my desired design 
-
+* Once I was happy with my back-end I moved on to the front-end, working on the main components 
+* After I had reached my MVP I worked on the Survey as a stretch goal using a Survey-js library
+* Styling- I took inspiration from the [Babylon](https://www.babylonhealth.com/en-gb/) website which is a well known digital healthcare app and used CSS to create my desired design 
 
 
 ## Challenges/ known bugs:
 * The free version of Heroku I used to deploy was deleted soon after so had to redeploy
-* Bug with useEffecct on the main Problems page causing re-rendering
-* Survey page needs refreshing to start again 
+* Bug with useEffect on the main Problems page causing re-rendering
+* Survey page needs refreshing to start the survey again 
 
 ## Future improvements:
-* Sort out dependency array of useEffect on problems page 
+* Sort out dependency array of useEffect on Problems page 
 * Complete other pages on the navbar and footer such as "About Us" and "FAQ" and on the footer 
 * Expand the database to include more problems and advice for users 
 * Create a start again button after completing survey 
 * Responsive design for mobile 
 
 ## Lessons learned:
-* Saw benefits of collaborative work, sharing ideas and fresh eyes for debugging 
-* Confidence boost building full-stack app on my own
-* 
+* As this was my first project using Python it gave me a greater understanding of the fundamentals and using SQL database 
+* Although I enjoyed working solo on the project being able to create everything from start to finish I was able to compare with the benefits of collaborative work, such as being able to share ideas and having a fresh pair of eyes for debugging together
+
