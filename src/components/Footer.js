@@ -9,7 +9,7 @@ function Footer() {
         <Logo />
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex justify-start flex-wrap gap-3 text-sm">
         <p> News </p>
         <p> Careers </p>
         <p> Contact </p>
@@ -17,10 +17,10 @@ function Footer() {
         <p> Legal </p>
       </div>
       <hr />
-      <div className="flex justify-between ">
+      <div className="flex justify-between gap-3 text-sm">
         <div>2023 2:30 Ltd. All rights reserved.</div>
-        <div>London SW1 1AS</div>
-        <div className="flex gap-5 text-xl">
+        <div className>London, SW1 1AS</div>
+        <div className="flex gap-2 sm::gap-5 text-xl">
           <a
             href="https://github.com/wodnjsd"
             target="blank"

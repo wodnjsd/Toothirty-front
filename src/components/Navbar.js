@@ -54,7 +54,7 @@ const NavBar = () => {
             <Logo />
           </Link>
         </div>
-        <div className="hidden md:flex font-inter text-sm justify-center gap-10 lg:gap-20">
+        <div className="hidden md:flex font-semibold text-sm justify-center gap-10 lg:gap-20">
           {links.map((link) => (
             <Link key={link.name} to={link.route} className="text-gray-800">
               {link.name}

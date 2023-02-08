@@ -17,7 +17,7 @@ function Problems() {
 
   return (
     <section className="flex flex-col items-center w-full h-screen">
-      <div className="w-full bg-slate-50 flex justify-center items-center py-12">
+      <div className="px-5 w-full bg-slate-50 flex justify-center items-center py-12">
         <p className="text-3xl font-prata">
           What are your signs and symptoms?
         </p>

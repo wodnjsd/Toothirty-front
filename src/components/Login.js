@@ -33,8 +33,8 @@ export default function Login() {
     }
   }
 
-  return <div className="login-page">
-    <div className="login-header">
+  return <div className="flex flex-col items-center w-full h-screen">
+    <div className="w-full bg-slate-50 flex justify-center items-center py-12 text-3xl font-prata">
       Login- for Admin only
     </div>
     <br />

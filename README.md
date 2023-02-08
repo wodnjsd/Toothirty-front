@@ -80,7 +80,7 @@ Admin can:
 * Complete other pages on the navbar and footer such as "About Us" and "FAQ" and on the footer 
 * Expand the database to include more problems and advice for users 
 * Create a start again button after completing survey 
-* Responsive design for mobile 
+* Create reusable components e.g. classnames where styling is repetitive
 
 ## Lessons learned:
 * As this was my first project using Python it gave me a greater understanding of the fundamentals and using SQL database 

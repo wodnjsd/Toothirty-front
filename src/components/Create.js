@@ -52,11 +52,11 @@ function CreateProblem() {
   }
 
   return (
-    <section className="index-page">
-      <div className="header">
-        <p className="header-title">Create new problem</p>
+    <section className="flex flex-col items-center w-full h-full min-h-screen">
+      <div className="px-5 w-full bg-slate-50 flex justify-center items-center py-12">
+        <p className="text-3xl font-prata">Create new problem</p>
       </div>
-      <div className="index-box">
+      <div className="h-4/5 py-12 flex flex-col justify-between gap-10 items-center w-5/6 lg:w-1/2">
         <form onSubmit={handleSubmit} className="form">
           {['name', 'diagnosis'].map(field => {
             return <div key={field} className="field">
