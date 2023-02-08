@@ -8,6 +8,7 @@ import Problems from './components/Problems'
 import ShowAdvice from './components/Advice'
 import CreateProblem from './components/Create'
 import Questionnaire from './components/Survey'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/survey" element={<Questionnaire />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </Router>
 
   )

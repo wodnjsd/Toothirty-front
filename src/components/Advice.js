@@ -1,59 +1,58 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
-import Footer from './Footer'
-import { baseUrl } from '../config'
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import { baseUrl } from "../config";
 
 function ShowAdvice() {
-
-  const [advice, setAdvice] = React.useState([])
-  const [diagnosis, setDiagnosis] = React.useState(undefined)
-  const { problemId } = useParams()
+  const [advice, setAdvice] = React.useState([]);
+  const [diagnosis, setDiagnosis] = React.useState(undefined);
+  const { problemId } = useParams();
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`${baseUrl}/problems/${problemId}`)
-      const json = await res.json()
-      setAdvice(json.advice)
-      setDiagnosis(json.diagnosis)
-    }
-    getData()
-  }, [problemId])
-
+      const res = await fetch(`${baseUrl}/problems/${problemId}`);
+      const json = await res.json();
+      setAdvice(json.advice);
+      setDiagnosis(json.diagnosis);
+    };
+    getData();
+  }, [problemId]);
 
   return (
-    <section className="index-page">
-      <div className="header">
-        <p className="header-title">
+    <section className="flex flex-col items-center w-full h-screen ">
+      <div className="w-full bg-slate-50 flex justify-center items-center py-12">
+        <p className="text-3xl font-prata">
           It looks like you might have: {diagnosis}
         </p>
       </div>
-      <br />
-      <h3 className="advice">
-        Advice:
-      </h3>
-      <br />
-      {advice.map((advice, index) => {
-        return <div key={index}>
-          <div className="advice-box">
-
-            <div>
-              <p className="index-name">{advice.content}</p>
-            </div>
-          </div>
+      <div className="h-4/5 py-12 flex flex-col justify-between gap-10 items-center w-5/6 lg:w-1/2">
+        <h3 className="mt-2">Advice:</h3>
+        <div className="basis-2/3 w-full flex flex-col justify-center gap-2 ">
+          {advice.map((advice, index) => {
+            return (
+              <p
+                key={index}
+                className="w-full text-center text-gray-600 border-2 py-5 font-inter"
+              >
+                {advice.content}
+              </p>
+            );
+          })}
         </div>
-      })}
-      < br />
-      <p className="advice">Make sure you contact your dentist as soon as possible and get it checked!</p>
-      <hr />
-      <Link to={'/all'} className="level-right">
-        Start again ⏎
-      </Link>
-      <br />
+        <p className="text-center">
+          Make sure you contact your dentist as soon as possible and get it
+          checked!
+        </p>
 
-      <Footer />
-
+        <Link
+          to={"/all"}
+          className="bg-black text-white hover:text-amber-400 py-2 px-4"
+        >
+          Start again ⏎
+        </Link>
+     
+      </div>
     </section>
-  )
+  );
 }
 
-export default ShowAdvice
+export default ShowAdvice;

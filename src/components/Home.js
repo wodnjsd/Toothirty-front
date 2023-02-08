@@ -1,29 +1,43 @@
 /* eslint-disable react/no-unescaped-entities */
-
 // import { ReactComponent as Logo } from '../img/Logo.svg'
-import Footer from './Footer'
+import img1 from "../img/home.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section className="homepage">
-      <div className="body">
-        <div className="body-writing">
-          <div className="home-title">
-            More than just a Dentist
+    <section className="w-full h-full bg-slate-50 py-20 px-5  ">
+      <div className="flex flex-col justify-between md:flex-row gap-8 md:px-20">
+        <div className="flex flex-col justify-center gap-10 px-10 lg:max-w-xl">
+          <div className="w-2/3 flex justify-center py-2 bg-amber-300 rounded-3xl px-2">
+            Dental healthcare at your fingertips
           </div>
-          <div className="home-writing">
-            Roses are red, violets are blue, it's time for your dental cleaning, and maybe a checkup too
+          <div className="text-gray-800 text-5xl font-prata">More than just a Dentist</div>
+          <div className="text-gray-700 text-md">
+            <p>
+              Roses are red, violets are blue, it's time for your dental
+              cleaning, and maybe a checkup too.
+            </p>
+            <p className="py-3">
+              2:30 gives you quick, easy access to dentists, right form your
+              device. You can control your wellbeing with digital health tools
+              available to you 24/7.
+            </p>
           </div>
+          <Link to="/all" className="flex justify-center bg-black hover:text-amber-400 text-white w-1/2 py-3">
+            Start your survey 
+          </Link>
         </div>
 
-        <img src={require('../img/home.png')} className="home-image" />
+        <div className="max-w-4xl flex justify-center items-center">
+          <img
+            src={img1}
+            alt="homepage"
+            className="hidden lg:flex lg:h-5/6 object-cover object-center"
+          />
+        </div>
       </div>
-      
-      <Footer />
-    
-
     </section>
-  )
+  );
 }
 
-export default Home
+export default Home;

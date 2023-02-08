@@ -2,7 +2,6 @@ import React from 'react'
 import 'survey-core/modern.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from "survey-react-ui";
-import Footer from './Footer'
 
 
 StylesManager.applyTheme("modern");
@@ -105,20 +104,18 @@ function Questionnaire() {
 
 
   return (
-    <section className="index-page">
-      <div className="header">
-        <h3 className="header-title">How likely are you to get tooth decay?</h3>
-        <p className="survey-subtitle">Complete the quiz below and find out!</p>
+    <section className="w-full">
+      <div className="bg-slate-50 flex flex-col py-5 items-center">
+        <h3 className="text-3xl font-prata">How likely are you to get tooth decay?</h3>
+        <p className="text-md pt-2">Complete the quiz below and find out!</p>
       </div>
       <br />
-      <div className="survey-box">{<Survey model={survey} />}
+      <div className="survey-box flex justify-center">{<Survey model={survey} />}
         <div id="result"> 
           <div></div>
           
         </div>
       </div>
-
-      <Footer />
     </section>
   )
 }

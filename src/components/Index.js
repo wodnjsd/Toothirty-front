@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
 import { baseUrl } from '../config'
 
 function Index() {
@@ -16,20 +15,21 @@ function Index() {
     }
     getData()
     console.log(types)
-  }, [types])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-  return <section className="index-page">
-    <div className="header">
-      <p className="header-title">What's hurting?</p>
+  return <section className="flex flex-col items-center w-full h-screen">
+    <div className="w-full bg-slate-50 flex justify-center items-center py-12">
+      <p className="text-3xl font-prata">What's hurting?</p>
     </div>
-    <div className="index-box">
+    <div className="h-4/5 flex flex-col justify-center w-1/2">
 
       {types.map((type, index) => {
         return <div key={index}>
           <Link to={`/types/${type.id}`}>
-            <div className="index">
-              <div>
-                <p className="index-name">{type.name[0].toUpperCase() + type.name.slice(1)}</p>
+            <div className="w-full my-2 border-2 flex justify-center gap-8 items-center py-4">
+              <div className="text-gray-600 ">
+                <p className="font-inter">{type.name[0].toUpperCase() + type.name.slice(1)}</p>
               </div>    
               <div>      
                 <figure className="index-image">
@@ -42,7 +42,6 @@ function Index() {
       })}
 
     </div>
-    <Footer />
   </section>
 }
 

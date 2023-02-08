@@ -1,45 +1,45 @@
-import React from "react"
-import { Link, useParams } from "react-router-dom"
-import Footer from "./Footer"
-import { baseUrl } from '../config'
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import { baseUrl } from "../config";
 
 function Problems() {
-  const [problems, setProblems] = React.useState([])
-  const { typeId } = useParams()
-
+  const [problems, setProblems] = React.useState([]);
+  const { typeId } = useParams();
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch(`${baseUrl}/types/${typeId}`)
-      const json = await res.json()
-      setProblems(json.problems)
-    }
-    getData()
-  }, [typeId])
-
+      const res = await fetch(`${baseUrl}/types/${typeId}`);
+      const json = await res.json();
+      setProblems(json.problems);
+    };
+    getData();
+  }, [typeId]);
 
   return (
-    <section className="index-page">
-      <div className="header">
-        <p className="header-title">What are your signs and symptoms?</p>
+    <section className="flex flex-col items-center w-full h-screen">
+      <div className="w-full bg-slate-50 flex justify-center items-center py-12">
+        <p className="text-3xl font-prata">
+          What are your signs and symptoms?
+        </p>
       </div>
-      <div className="index-box">
+      <div className="h-4/5 flex flex-col justify-center w-1/2">
         {problems.map((problem, index) => {
-          return <div key={index}>
-            <Link to={`/problems/${problem.id}`}>
-              <div className="index">
-                <div className="index-name">
-                  <p >{problem.name}</p>
+          return (
+            <div
+              key={index}
+              className="w-full my-1 border-2 flex justify-center gap-6 items-center py-5"
+            >
+              <Link to={`/problems/${problem.id}`}>
+                <div className="text-gray-600 font-inter">
+                  <p>{problem.name}</p>
                 </div>
-              </div>
-            </Link>
-          </div>
+              </Link>
+            </div>
+          );
         })}
       </div>
-      <Footer />
     </section>
-
-  )
+  );
 }
 
-export default Problems
+export default Problems;
